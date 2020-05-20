@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "nageshcena/mkdocs"
+    registry = "nageshcena/myrepo1"
     registryCredential = 'docker-creds'
     dockerImage = ''
   }
@@ -21,7 +21,7 @@ pipeline {
 
     stage('Test Mkdocs' ) {
                 agent {
-                docker { image 'nageshcena/mkdocs:$BUILD_NUMBER' }
+                docker { image 'nageshcena/myrepo1:$BUILD_NUMBER' }
             }
             steps {
                 sh 'mkdocs --version'
